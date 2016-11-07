@@ -10,24 +10,22 @@ We assume the user is familiar with, and have following installed:
 # Digital ocean
 
 1. Create a VM with docker-machine
-
-```
-docker-machine create \
---driver=digitalocean \
---digitalocean-access-token=[access token] \
---digitalocean-size=512mb \
---digitalocean-region=fra1 \
---digitalocean-private-networking=true \
---digitalocean-image=ubuntu-16-04-x64 \
-openteach
-```
-
+   ```
+   docker-machine create \
+   --driver=digitalocean \
+   --digitalocean-access-token=[access token] \
+   --digitalocean-size=512mb \
+   --digitalocean-region=fra1 \
+   --digitalocean-private-networking=true \
+   --digitalocean-image=ubuntu-16-04-x64 \
+   openteach
+   ```
 2. Use the new machine: `eval $(docker-machine env openteach)`
 3. create docker-compose.yml from following template:
 
 ```
 openteach:
-  image: kadirahq/meteord
+  image: kadirahq/meteord:base
   ports:
    - "80:80"
   links:
@@ -36,6 +34,7 @@ openteach:
    - MONGO_URL=mongodb://mongo/meteor-db
    - ROOT_URL=http://[your domain]
    - BUNDLE_URL=https://cdn.rawgit.com/openteach/release/master/releases/[release].tar.gz
+   - METEOR_SETTINGS='[CONTENT OF SETTINGS.JSON]'
 mongo:
   image: mongo:latest
 ```
