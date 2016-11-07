@@ -22,23 +22,21 @@ We assume the user is familiar with, and have following installed:
    ```
 2. Use the new machine: `eval $(docker-machine env openteach)`
 3. create docker-compose.yml from following template:
-
-```
-openteach:
-  image: kadirahq/meteord:base
-  ports:
-   - "80:80"
-  links:
-   - mongo
-  environment:
-   - MONGO_URL=mongodb://mongo/meteor-db
-   - ROOT_URL=http://[your domain]
-   - BUNDLE_URL=https://cdn.rawgit.com/openteach/release/master/releases/[release].tar.gz
-   - METEOR_SETTINGS=[CONTENT OF SETTINGS.JSON]
-mongo:
-  image: mongo:latest
-```
-
+   ```
+   openteach:
+     image: kadirahq/meteord:base
+     ports:
+      + "80:80"
+     links:
+      + mongo
+     environment:
+      + MONGO_URL=mongodb://mongo/meteor-db
+      + ROOT_URL=http://[your domain]
+      + BUNDLE_URL=https://cdn.rawgit.com/openteach/release/master/releases/[release].tar.gz
+      + METEOR_SETTINGS=[CONTENT OF SETTINGS.JSON]
+   mongo:
+     image: mongo:latest
+   ```
 4. Setup by issuing `docker-compose up -d`
 
 # Create a release
