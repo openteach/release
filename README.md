@@ -34,7 +34,7 @@ openteach:
    - MONGO_URL=mongodb://mongo/meteor-db
    - ROOT_URL=http://[your domain]
    - BUNDLE_URL=https://cdn.rawgit.com/openteach/release/master/releases/[release].tar.gz
-   - METEOR_SETTINGS='[CONTENT OF SETTINGS.JSON]'
+   - METEOR_SETTINGS=[CONTENT OF SETTINGS.JSON]
 mongo:
   image: mongo:latest
 ```
