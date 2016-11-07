@@ -26,7 +26,7 @@ openteach
 3. create docker-compose.yml from following template:
 
 ```
-dashboard:
+openteach:
   image: kadirahq/meteord
   ports:
    - "80:80"
@@ -36,7 +36,6 @@ dashboard:
    - MONGO_URL=mongodb://mongo/meteor-db
    - ROOT_URL=http://[your domain]
    - BUNDLE_URL=https://cdn.rawgit.com/openteach/release/master/releases/[release].tar.gz
-
 mongo:
   image: mongo:latest
 ```
