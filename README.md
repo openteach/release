@@ -22,6 +22,26 @@ docker-machine create \
 openteach
 ```
 
+2. Use the new machine: `eval $(docker-machine env openteach)`
+3. create docker-compose.yml from following template:
+
+```
+dashboard:
+  image: kadirahq/meteord
+  ports:
+   - "80:80"
+  links:
+   - mongo
+  environment:
+   - MONGO_URL=mongodb://mongo/meteor-db
+   - ROOT_URL=http://[your domain]
+   - BUNDLE_URL=https://cdn.rawgit.com/openteach/release/master/releases/[release].tar.gz
+
+mongo:
+  image: mongo:latest
+```
+
+4. Setup by issuing `docker-compose up -d`
 
 # Create a release
 If you want to release cutting edge from the main repository, you can create a
