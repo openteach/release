@@ -33,7 +33,7 @@ We assume the user is familiar with, and have following installed:
      environment:
       + MONGO_URL=mongodb://mongo/meteor-db
       + ROOT_URL=http://[YOUR DOMAIN]
-      + BUNDLE_URL=https://raw.githubusercontent.com/openteach/release/blob/master/releases/[RELEASE].tar.gz
+      + BUNDLE_URL=https://raw.githubusercontent.com/openteach/release/master/releases/[RELEASE].tar.gz
       + METEOR_SETTINGS=[CONTENT OF SETTINGS.JSON]
    mongo:
      image: mongo:latest
